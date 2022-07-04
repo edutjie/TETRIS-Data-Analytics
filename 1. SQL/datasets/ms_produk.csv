@@ -1,0 +1,42 @@
+"kode_produk","kode_kategori","nama_produk","unit","kode_satuan"
+PROD-0000001,KTG-003,bawang merah 1kg,1,kg
+PROD-0000002,KTG-003,bawang putih 1 kg,1,kg
+PROD-0000003,KTG-003,buncis 1 kg,1,kg
+PROD-0000004,KTG-003,kacang panjang 1 kg,1,kg
+PROD-0000005,KTG-003,kacang hijau 1 kg,1,kg
+PROD-0000006,KTG-003,kentang 1 kg,1,kg
+PROD-0000007,KTG-003,ketimun 1 kg,1,kg
+PROD-0000008,KTG-003,kobis 1 kg,1,kg
+PROD-0000009,KTG-003,tomat 1 kg,1,kg
+PROD-0000010,KTG-003,ubi kayu basah 1 kg,1,kg
+PROD-0000011,KTG-003,ubi jalar 1 kg,1,kg
+PROD-0000012,KTG-003,wortel 1 kg,1,kg
+PROD-0000013,KTG-002,susu kotak (800 ml),1,ktk
+PROD-0000014,KTG-002,telur ayam ras 1 kg,1,kg
+PROD-0000015,KTG-002,telur ayam kampung 1 kg,1,kg
+PROD-0000016,KTG-002,mie instant 1 kotak (40 bungkus),40,bks
+PROD-0000017,KTG-002,air mineral 600 ml,1,btl
+PROD-0000018,KTG-002,jus kesehatan 600 ml,1,btl
+PROD-0000019,KTG-002,nasi goreng instant (1 ons),1,bks
+PROD-0000020,KTG-002,snack gurih 1 ons,1,ons
+PROD-0000021,KTG-002,kacang goreng 1 kg,1,kg
+PROD-0000022,KTG-002,kacang mete 1 kg,1,kg
+PROD-0000023,KTG-002,markisa 600 ml,1,btl
+PROD-0000024,KTG-002,bumbu fried chicken,1,bks
+PROD-0000025,KTG-002,susu kotak 1 l,1,btl
+PROD-0000026,KTG-002,minuman probiotik,1,btl
+PROD-0000027,KTG-001,jeruk 1 kg,1,kg
+PROD-0000028,KTG-001,apel 1 kg,1,kg
+PROD-0000029,KTG-001,alpukat 1 kg,1,kg
+PROD-0000030,KTG-001,belimbing 1 kg,1,kg
+PROD-0000031,KTG-001,durian 1 kg,1,kg
+PROD-0000032,KTG-001,kelapa muda,1,buah
+PROD-0000033,KTG-001,mangga 1 kg,1,kg
+PROD-0000034,KTG-001,Manggis 1 kg,1,kg
+PROD-0000035,KTG-001,nenas 1 kg,1,kg
+PROD-0000036,KTG-001,nangka 1 kg,1,kg
+PROD-0000037,KTG-001,pepaya 1 buah,1,buah
+PROD-0000038,KTG-001,pisang 1 sisir,1,ssr
+PROD-0000039,KTG-001,rambutan 1 kg,1,kg
+PROD-0000040,KTG-001,salak 1 kg,1,kg
+PROD-0000041,KTG-001,semangka 1 buah,1,buah
