@@ -1,0 +1,36 @@
+-- 1.
+-- Asumsi: Ingin dilihat jumlah pembelian terbanyak yang diurutkan PER PRODUK terlebih dahulu, baru JUMLAH PEMBELIAN-nya
+            dilanjutkan oleh tanggal transaksi dan kode transaksi
+
+select
+	mc.nama_cabang as 'nama cabang',
+	mk.nama_depan as 'nama depan kasir',
+	tp.tgl_transaksi as 'tanggal transaksi',
+	mp.nama_produk as 'nama produk',
+	tp.jumlah_pembelian as 'jumlah pembelian'
+from tr_penjualan tp
+inner join ms_produk mp using(kode_produk)
+inner join ms_cabang mc using(kode_cabang)
+inner join ms_karyawan mk on mk.kode_karyawan = tp.kode_kasir and mk.kode_cabang = mc.kode_cabang 
+order by tp.kode_produk, tp.jumlah_pembelian desc, tp.tgl_transaksi, tp.kode_transaksi.
+
+
+-- 2.
+-- Asumsi: Ingin menghitung keuntungan dan persentasi keuntungan per bulan untuk setiap cabang.
+
+with keuntungan as (
+	select
+		mc.nama_cabang as nama_cabang,
+		month(mhh.tgl_berlaku) as bulan,
+		date_format(mhh.tgl_berlaku, '%M %Y') nama_bulan_dan_tahun_transaksi,
+		sum(tp.jumlah_pembelian * (mhh.harga_berlaku_cabang - mhh.modal_cabang - mhh.biaya_cabang)) as keuntungan_per_bulan
+	from ms_harga_harian mhh 
+	inner join ms_cabang mc using(kode_cabang)
+	inner join tr_penjualan tp on tp.kode_cabang = mhh.kode_cabang and tp.kode_produk = mhh.kode_produk and tp.tgl_transaksi = mhh.tgl_berlaku 
+	group by 1, 2, 3
+	order by 1, 2
+)
+select
+	nama_cabang, nama_bulan_dan_tahun_transaksi, keuntungan_per_bulan,
+	(keuntungan_per_bulan / lag(keuntungan_per_bulan, 1, 0) over(partition by nama_cabang) - 1) * 100 as 'persen growth'
+from keuntungan
