@@ -1,0 +1,48 @@
+NewsAPI
+1. Everything
+contoh 1:
+https://newsapi.org/v2/everything?q=polusi&from=2022-06-14&to=2022-07-01&domains=detik.com
+detil:
+-q=polusi
+-from=2022-06-14
+-to=2022-07-01
+-domains=detik.com
+
+contoh 2:
+https://newsapi.org/v2/everything?q=%22timnas%20indonesia%22
+detil:
+-q=%22timnas%20indonesia%22
+
+2. Top Headlines
+contoh 1:
+https://newsapi.org/v2/top-headlines?country=id
+detil:
+-country=id
+
+
+Twitter API
+1. Search Tweet
+contoh 1:
+https://api.twitter.com/2/tweets/search/recent?query=polusi&start_time=2022-07-02T00:00:00Z&end_time=2022-07-03T00:00:00Z&max_results=10&tweet.fields=id,conversation_id,author_id,created_at,lang,geo,source,reply_settings,possibly_sensitive,text
+-query=polusi
+-start_time=2022-07-01T00:00:00Z
+-end_time=2022-07-02T00:00:00Z
+-max_results=10
+-tweet.fields=id,conversation_id,author_id,created_at,lang,geo,source,reply_settings,possibly_sensitive,text
+
+contoh 2:
+https://api.twitter.com/2/tweets/search/recent?query=%22timnas%20indonesia%22&start_time=2022-07-01T00:00:00Z&end_time=2022-07-02T00:00:00Z&max_results=10&tweet.fields=id,conversation_id,author_id,created_at,lang,geo,source,reply_settings,possibly_sensitive,text
+detil:
+-query=%22timnas%20indonesia%22
+-start_time=2022-07-01T00:00:00Z
+-end_time=2022-07-02T00:00:00Z
+-max_results=10
+-tweet.fields=id,conversation_id,author_id,created_at,lang,geo,source,reply_settings,possibly_sensitive,text
+
+2. Count Tweet
+contoh 1:
+https://api.twitter.com/2/tweets/counts/recent?query=polusi&start_time=2022-07-02T00:00:00Z&end_time=2022-07-03T00:00:00Z&granularity=hour
+-query=polusi
+-start_time=2022-07-02T00:00:00Z
+-end_time=2022-07-03T00:00:00Z
+-granularity=hour
