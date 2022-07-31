@@ -10,9 +10,10 @@ st.set_page_config(
     # layout="wide"
 )
 
-pp, name = st.columns([1,10])
+pp, name = st.columns([1, 10])
 pp.image("data/profile/pp.png", width=60)
-name.markdown("""
+name.markdown(
+    """
                 <style>
                     .name {
                         margin-top: -15px;
@@ -25,7 +26,9 @@ name.markdown("""
                         font-size: 12px;
                     }
                 </style>
-              """, unsafe_allow_html=True)
+              """,
+    unsafe_allow_html=True,
+)
 name.markdown("<h6 class='name'>Eduardus Tjitrahardja</h6>", unsafe_allow_html=True)
 name.markdown("<p class='sub'>TETRIS II: Data Analytics</p>", unsafe_allow_html=True)
 name.markdown("<p class='date'>1 Agustus 2022</p>", unsafe_allow_html=True)
@@ -43,7 +46,9 @@ st.write(
         Namun, banyak dari mereka terpaksa harus bekerja untuk membantu orang tua atau memenuhi kebutuhan hidupnya.
     """
 )
-st.info("***UU No. 13 Tahun 2003** tentang Ketenagakerjaan menegaskan bahwa pengusaha dilarang mempekerjakan anak yang berusia kurang dari **18 tahun**.*")
+st.info(
+    "***UU No. 13 Tahun 2003** tentang Ketenagakerjaan menegaskan bahwa pengusaha dilarang mempekerjakan anak yang berusia kurang dari **18 tahun**.*"
+)
 st.write(
     """
         Berdasarkan data dari BPS, pada tahun **2020**, penduduk usia **10-17** tahun yang menjadi pekerja di tanah air sebesar **1,17 juta** jiwa pada 2020,
@@ -51,7 +56,9 @@ st.write(
     """
 )
 
-st.markdown('<h3>Persentase anak usia 10-17 tahun yang bekerja</h3>', unsafe_allow_html=True)
+st.markdown(
+    "<h3>Persentase anak usia 10-17 tahun yang bekerja</h3>", unsafe_allow_html=True
+)
 labor_area, labor_gender = st.tabs(["Berdasarkan Area", "Berdasarkan Jenis Kelamin"])
 
 with labor_area:
@@ -165,9 +172,7 @@ plt.xticks(rotation=90)
 plt.title("Peringkat Provinsi Anak Usia 10-17 Tahun Yang Bekerja")
 plt.ylabel("%")
 for i in ax.containers:
-    ax.bar_label(
-        i,
-    )
+    ax.bar_label(i, fontsize=8)
 plt.annotate(
     "Sumber: Badak Pusat Statistik (BPS)",
     (0, 0),
@@ -186,9 +191,6 @@ angka_pekerja_anak_2020 = pd.read_csv(
 )
 angka_pekerja_anak_2020.set_index("tahun", inplace=True)
 angka_pekerja_anak_2020.plot(kind="bar", ax=ax)
-# plt.title(
-#     "Kenaikan Angka Pekerja Anak Usia 10-17 Tahun Yang Bekerja\nBerdasarkan Golongan Umur"
-# )
 plt.ylabel("%")
 for i in ax.containers:
     ax.bar_label(
@@ -204,7 +206,10 @@ plt.annotate(
     va="top",
 )
 col1.pyplot(fig)
-col2.markdown('<h5>Kenaikan Angka Pekerja Anak Usia 10-17 Tahun Yang Bekerja Berdasarkan Golongan Umur</h5>', unsafe_allow_html=True)
+col2.markdown(
+    "<h5>Kenaikan Angka Pekerja Anak Usia 10-17 Tahun Yang Bekerja Berdasarkan Golongan Umur</h5>",
+    unsafe_allow_html=True,
+)
 col2.write(
     """
         Kenaikan tertinggi terjadi pada usia **10-12 tahun (⬆️ 97% dari 2019)**.
@@ -212,17 +217,19 @@ col2.write(
     """
 )
 
-st.markdown('<h3>Sisi Gelap Pekerja Anak...</h3>', unsafe_allow_html=True)
+st.markdown("<h3>Sisi Gelap Pekerja Anak...</h3>", unsafe_allow_html=True)
 st.write(
     """
         Pekerja anak berisiko putus sekolah, telantar, dan masuk dalam situasi-situasi yang membahayakan diri sehingga mengancam tumbuh kembang yang optimal.
     """
 )
 
-status_sekolah, kekerasan_anak = st.tabs(['Status Sekolah', 'Kekerasan Anak'])
+status_sekolah, kekerasan_anak = st.tabs(["Status Sekolah", "Kekerasan Anak"])
 with status_sekolah:
     fig, ax = plt.subplots(figsize=(10, 5))
-    pekerja_anak_sekolah = pd.read_csv("data/child_labor_cleaned/pekerja_anak_sekolah.csv")
+    pekerja_anak_sekolah = pd.read_csv(
+        "data/child_labor_cleaned/pekerja_anak_sekolah.csv"
+    )
     pekerja_anak_sekolah.set_index("tahun", inplace=True)
     pekerja_anak_sekolah.plot(kind="bar", ax=ax)
     plt.title("Status Akademis Pekerja Anak")
@@ -231,24 +238,48 @@ with status_sekolah:
         ax.bar_label(
             i,
         )
+    plt.annotate(
+        "Sumber: Badak Pusat Statistik (BPS)",
+        (0, 0),
+        (0, -33),
+        fontsize=10,
+        xycoords="axes fraction",
+        textcoords="offset points",
+        va="top",
+    )
     st.pyplot(fig)
-    st.write("""
+    st.write(
+        """
                 Status akademis pekerja anak didominasi oleh anak-anak yang sudah tidak bersekolah lagi.
                 Hal ini membuktikan bahwa pekerja anak cenderung putus sekolah.
-             """)
-    
+             """
+    )
+
 with kekerasan_anak:
     fig, ax = plt.subplots(figsize=(10, 5))
-    kekerasan_anak_per_tahun = pd.read_csv("data/child_labor_cleaned/kekerasan_anak_per_tahun.csv")
+    kekerasan_anak_per_tahun = pd.read_csv(
+        "data/child_labor_cleaned/kekerasan_anak_per_tahun.csv"
+    )
     kekerasan_anak_per_tahun["tahun"] = pd.to_datetime(
         kekerasan_anak_per_tahun["tahun"].astype(str)
     )
     kekerasan_anak_per_tahun.set_index("tahun", inplace=True)
     kekerasan_anak_per_tahun.plot(marker="o", ax=ax)
-    plt.title('Kekerasan Anak di Indonesia')
-    plt.ylabel('Jumlah Kasus Kekerasan Anak')
+    plt.title("Kekerasan Anak di Indonesia")
+    plt.ylabel("Jumlah Kasus Kekerasan Anak")
+    plt.annotate(
+        "Sumber: Badak Pusat Statistik (BPS)",
+        (0, 0),
+        (0, -33),
+        fontsize=10,
+        xycoords="axes fraction",
+        textcoords="offset points",
+        va="top",
+    )
     st.pyplot(fig)
-    st.write("""
+    st.write(
+        """
                 Sama seperti kenaikan pada pekerja anak, Terjadi kenaikan drastis pada kekerasan anak di Indonesia pada tahun 2020.
                 Kenaikan pekerja anak bisa menjadi salah satu penyebab kenaikan angka kekerasan anak di Indonesia.
-            """)
+            """
+    )
