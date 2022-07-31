@@ -3,8 +3,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-import lorem
-from traitlets import default
 
 plt.style.use("seaborn")
 st.set_page_config(
