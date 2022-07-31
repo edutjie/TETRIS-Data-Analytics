@@ -1,4 +1,3 @@
-from tabnanny import check
 import streamlit as st
 import lorem
 import pandas as pd
@@ -128,4 +127,3 @@ with col2:
     
 with col3:
     st.write(lorem.paragraph())
-
