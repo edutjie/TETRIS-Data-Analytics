@@ -98,7 +98,7 @@ with labor_area:
     ax.text("2019", fill_thresholds_max - 0.2, "Sebelum Pandemi", style="italic")
     plt.ylabel("Persentase anak usia 10-17 tahun yang bekerja")
     plt.annotate(
-        "Sumber: Badak Pusat Statistik (BPS)",
+        "Sumber: Badan Pusat Statistik (BPS)",
         (0, 0),
         (0, -23),
         fontsize=10,
@@ -145,7 +145,7 @@ with labor_gender:
     ax.text("2019", 3.4, "Sebelum Pandemi", style="italic")
     plt.ylabel("%")
     plt.annotate(
-        "Sumber: Badak Pusat Statistik (BPS)",
+        "Sumber: Badan Pusat Statistik (BPS)",
         (0, 0),
         (0, -23),
         fontsize=10,
@@ -174,7 +174,7 @@ plt.ylabel("%")
 for i in ax.containers:
     ax.bar_label(i, fontsize=8)
 plt.annotate(
-    "Sumber: Badak Pusat Statistik (BPS)",
+    "Sumber: Badan Pusat Statistik (BPS)",
     (0, 0),
     (0, -135),
     fontsize=10,
@@ -197,7 +197,7 @@ for i in ax.containers:
         i,
     )
 plt.annotate(
-    "Sumber: Badak Pusat Statistik (BPS)",
+    "Sumber: Badan Pusat Statistik (BPS)",
     (0, 0),
     (0, -33),
     fontsize=10,
@@ -239,7 +239,7 @@ with status_sekolah:
             i,
         )
     plt.annotate(
-        "Sumber: Badak Pusat Statistik (BPS)",
+        "Sumber: Badan Pusat Statistik (BPS)",
         (0, 0),
         (0, -33),
         fontsize=10,
@@ -268,7 +268,7 @@ with kekerasan_anak:
     plt.title("Kekerasan Anak di Indonesia")
     plt.ylabel("Jumlah Kasus Kekerasan Anak")
     plt.annotate(
-        "Sumber: Badak Pusat Statistik (BPS)",
+        "Komisi Perlindungan Anak Indonesia (KPAI)",
         (0, 0),
         (0, -33),
         fontsize=10,
