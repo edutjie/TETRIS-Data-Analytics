@@ -250,6 +250,7 @@ with status_sekolah:
         ax.bar_label(
             i,
         )
+    plt.legend(loc="upper center", bbox_to_anchor=(0.5, -0.15), ncol=3)
     plt.annotate(
         "Sumber: Badan Pusat Statistik (BPS)",
         (0, 0),
