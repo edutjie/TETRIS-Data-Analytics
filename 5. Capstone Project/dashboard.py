@@ -14,19 +14,19 @@ pp, name = st.columns([1, 10])
 pp.image("data/profile/pp.png", width=60)
 name.markdown(
     """
-                <style>
-                    .name {
-                        margin-top: -15px;
-                    }
-                    .sub {
-                        margin-top: -20px;
-                    }
-                    .date {
-                        margin-top: -20px;
-                        font-size: 12px;
-                    }
-                </style>
-              """,
+        <style>
+            .name {
+                margin-top: -15px;
+            }
+            .sub {
+                margin-top: -20px;
+            }
+            .date {
+                margin-top: -20px;
+                font-size: 12px;
+            }
+        </style>
+    """,
     unsafe_allow_html=True,
 )
 name.markdown("<h6 class='name'>Eduardus Tjitrahardja</h6>", unsafe_allow_html=True)
@@ -42,7 +42,7 @@ st.write(
         Anak bangsa merupakan masa depan dari negara ini dan semua pihak wajib menjamin pemenuhan HAM mereka. Kenyataannya,
         angka pekerja anak di Indonesia hingga kini masih memprihatinkan.
         
-        Anak-anak hingga usia 19 tahun memiliki hak bersekolah untuk memperoleh pendidikan.
+        Anak-anak hingga usia 18 tahun memiliki hak bersekolah untuk memperoleh pendidikan.
         Namun, banyak dari mereka terpaksa harus bekerja untuk membantu orang tua atau memenuhi kebutuhan hidupnya.
     """
 )
@@ -51,8 +51,8 @@ st.info(
 )
 st.write(
     """
-        Berdasarkan data dari BPS, pada tahun **2020**, penduduk usia **10-17** tahun yang menjadi pekerja di tanah air sebesar **1,17 juta** jiwa pada 2020,
-        naik **320 ribu** orang dibandingkan pada tahun sebelumnya.
+        Berdasarkan data dari BPS, pada tahun **2020**, penduduk usia **10-17** tahun yang menjadi pekerja di tanah air sebesar **1,17 juta** anak pada 2020,
+        naik **320 ribu** anak dibandingkan pada tahun sebelumnya **(⬆️38% dari 2019)**.
     """
 )
 
@@ -65,7 +65,6 @@ with labor_area:
     pers_anak_kerja = pd.read_csv("data/child_labor_cleaned/pers_anak_kerja.csv")
     pers_anak_kerja["tahun"] = pd.to_datetime(pers_anak_kerja["tahun"].astype(str))
     pers_anak_kerja.set_index("tahun", inplace=True)
-
     area = st.selectbox(
         "Pilih Area",
         pers_anak_kerja.columns.unique(),
@@ -96,11 +95,11 @@ with labor_area:
     )
     ax.text("2020", fill_thresholds_max - 0.2, "Pandemi", style="italic")
     ax.text("2019", fill_thresholds_max - 0.2, "Sebelum Pandemi", style="italic")
-    plt.ylabel("Persentase anak usia 10-17 tahun yang bekerja")
+    plt.ylabel("%")
     plt.annotate(
         "Sumber: Badan Pusat Statistik (BPS)",
         (0, 0),
-        (0, -23),
+        (0, -35),
         fontsize=10,
         xycoords="axes fraction",
         textcoords="offset points",
@@ -147,7 +146,7 @@ with labor_gender:
     plt.annotate(
         "Sumber: Badan Pusat Statistik (BPS)",
         (0, 0),
-        (0, -23),
+        (0, -35),
         fontsize=10,
         xycoords="axes fraction",
         textcoords="offset points",
@@ -161,7 +160,7 @@ st.write(
         Faktor penyebabnya bermacam-macam dan dalam kasus ini,
         diduga pandemi adalah penyebab terbesarnya.
         Pada tahun **2021**, jumlah tersebut sedikit turun dari tahun sebelumnya, dari **1,7 juta** menjadi sebanyak **940 ribu** pekerja anak.
-        Angka yang masih tinggi!
+        Masih sedikit lebih tinggi dari tahun-tahun sebelum pandemi.
     """
 )
 
@@ -176,7 +175,7 @@ for i in ax.containers:
 plt.annotate(
     "Sumber: Badan Pusat Statistik (BPS)",
     (0, 0),
-    (0, -135),
+    (0, -150),
     fontsize=10,
     xycoords="axes fraction",
     textcoords="offset points",
@@ -199,7 +198,7 @@ for i in ax.containers:
 plt.annotate(
     "Sumber: Badan Pusat Statistik (BPS)",
     (0, 0),
-    (0, -33),
+    (0, -50),
     fontsize=10,
     xycoords="axes fraction",
     textcoords="offset points",
@@ -220,7 +219,8 @@ col2.write(
 st.markdown("<h3>Sisi Gelap Pekerja Anak...</h3>", unsafe_allow_html=True)
 st.write(
     """
-        Pekerja anak berisiko putus sekolah, telantar, dan masuk dalam situasi-situasi yang membahayakan diri sehingga mengancam tumbuh kembang yang optimal.
+        Pekerja anak berisiko putus sekolah dan masuk dalam situasi-situasi yang membahayakan diri sehingga mengancam tumbuh kembang yang optimal,
+        seperti terlibat dalam kekerasan.
     """
 )
 
@@ -241,7 +241,7 @@ with status_sekolah:
     plt.annotate(
         "Sumber: Badan Pusat Statistik (BPS)",
         (0, 0),
-        (0, -33),
+        (0, -50),
         fontsize=10,
         xycoords="axes fraction",
         textcoords="offset points",
@@ -250,9 +250,9 @@ with status_sekolah:
     st.pyplot(fig)
     st.write(
         """
-                Status akademis pekerja anak didominasi oleh anak-anak yang sudah tidak bersekolah lagi.
-                Hal ini membuktikan bahwa pekerja anak cenderung putus sekolah.
-             """
+            Status akademis pekerja anak didominasi oleh anak-anak yang sudah tidak bersekolah lagi **(15.83% pada tahun 2020 dan 15.03% pada tahun 2021)**.
+            Hal ini membuktikan bahwa pekerja anak cenderung putus sekolah.
+        """
     )
 
 with kekerasan_anak:
@@ -277,9 +277,20 @@ with kekerasan_anak:
         va="top",
     )
     st.pyplot(fig)
-    st.write(
-        """
-                Sama seperti kenaikan pada pekerja anak, Terjadi kenaikan drastis pada kekerasan anak di Indonesia pada tahun 2020.
-                Kenaikan pekerja anak bisa menjadi salah satu penyebab kenaikan angka kekerasan anak di Indonesia.
-            """
+    kekerasan_desc_col, kekerasan_corr_col = st.columns([4, 1])
+    kekerasan_corr = pers_anak_kerja["INDONESIA"].corr(
+        kekerasan_anak_per_tahun["total"]
     )
+
+    with kekerasan_desc_col:
+        st.write(
+            """
+                Sama seperti kenaikan pada pekerja anak, Terjadi kenaikan drastis pada kekerasan anak di Indonesia pada tahun **2020** dimana pandemi dimulai.
+                Jumlah kasus kekerasan anak **berkorelasi tinggi** dengan persentase angka pekerja anak.
+            """
+        )
+    with kekerasan_corr_col:
+        st.metric(
+            "Korelasi:",
+            f"{kekerasan_corr*100:.2f}%",
+        )
