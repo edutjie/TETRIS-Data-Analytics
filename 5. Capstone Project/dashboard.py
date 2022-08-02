@@ -1,3 +1,4 @@
+from turtle import color
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -93,8 +94,10 @@ with labor_area:
         color="red",
         alpha=0.2,
     )
-    ax.text("2020", fill_thresholds_max - 0.2, "Pandemi", style="italic")
-    ax.text("2019", fill_thresholds_max - 0.2, "Sebelum Pandemi", style="italic")
+    ax.text("2020", fill_thresholds_max - 0.15, "Pandemi", style="italic")
+    ax.text("2019", fill_thresholds_max - 0.15, "Sebelum Pandemi", style="italic")
+    for i, value in enumerate(pers_anak_kerja[area]):
+        ax.text(pers_anak_kerja.index[i], value + 0.05, value, style="italic")
     plt.ylabel("%")
     plt.annotate(
         "Sumber: Badan Pusat Statistik (BPS)",
@@ -140,8 +143,16 @@ with labor_gender:
     )
     ax.legend(["Laki-laki", "Perempuan"])
     # create text top left
-    ax.text("2020", 3.4, "Pandemi", style="italic")
-    ax.text("2019", 3.4, "Sebelum Pandemi", style="italic")
+    ax.text("2020", 3.6, "Pandemi", style="italic")
+    ax.text("2019", 3.6, "Sebelum Pandemi", style="italic")
+    for i, value in enumerate(pers_anak_kerja_gender["Laki-laki"]):
+        ax.text(
+            pers_anak_kerja.index[i], value + 0.05, value, style="italic", color="blue"
+        )
+    for i, value in enumerate(pers_anak_kerja_gender["Perempuan"]):
+        ax.text(
+            pers_anak_kerja.index[i], value - 0.15, value, style="italic", color="red"
+        )
     plt.ylabel("%")
     plt.annotate(
         "Sumber: Badan Pusat Statistik (BPS)",
@@ -160,7 +171,7 @@ st.write(
         Faktor penyebabnya bermacam-macam dan dalam kasus ini,
         diduga pandemi adalah penyebab terbesarnya.
         Pada tahun **2021**, jumlah tersebut sedikit turun dari tahun sebelumnya, dari **1,7 juta** menjadi sebanyak **940 ribu** pekerja anak.
-        Masih sedikit lebih tinggi dari tahun-tahun sebelum pandemi.
+        Masih sedikit lebih tinggi dari tahun-tahun sebelum pandemi. Bahkan jika kita lihat data di **Kalimantan Utara**, angkanya masih **naik** terus hingga **2021**.
     """
 )
 
@@ -168,7 +179,7 @@ fig, ax = plt.subplots(figsize=(10, 3))
 pers_anak_kerja_rank = pd.read_csv("data/child_labor_cleaned/pers_anak_kerja_rank.csv")
 sns.barplot(x="provinsi", y="persentase", data=pers_anak_kerja_rank, palette="Blues_d")
 plt.xticks(rotation=90)
-plt.title("Peringkat Provinsi Anak Usia 10-17 Tahun Yang Bekerja")
+plt.title("Peringkat Provinsi Anak Usia 10-17 Tahun Yang Bekerja 2021")
 plt.ylabel("%")
 for i in ax.containers:
     ax.bar_label(i, fontsize=8)
@@ -206,13 +217,14 @@ plt.annotate(
 )
 col1.pyplot(fig)
 col2.markdown(
-    "<h5>Kenaikan Angka Pekerja Anak Usia 10-17 Tahun Yang Bekerja Berdasarkan Golongan Umur</h5>",
+    "<h5>Kenaikan Angka Pekerja Anak Usia 10-17 Tahun Yang Bekerja Berdasarkan Kelompok Umur</h5>",
     unsafe_allow_html=True,
 )
 col2.write(
     """
         Kenaikan tertinggi terjadi pada usia **10-12 tahun (⬆️ 97% dari 2019)**.
         Angka pekerja anak pada usia **13-14** juga mengalami kenaikan yang cukup tinggi **(⬆️ 61% dari 2019)**.
+        Sedangkan angka pekerja anak pada usia **15-17** mengalami penurunan sedikit **(🔻7.5% dari 2019)**.
     """
 )
 
@@ -267,6 +279,8 @@ with kekerasan_anak:
     kekerasan_anak_per_tahun.plot(marker="o", ax=ax)
     plt.title("Kekerasan Anak di Indonesia")
     plt.ylabel("Jumlah Kasus Kekerasan Anak")
+    for i, value in enumerate(kekerasan_anak_per_tahun["total"]):
+        ax.text(kekerasan_anak_per_tahun.index[i], value + 100, value, style="italic")
     plt.annotate(
         "Komisi Perlindungan Anak Indonesia (KPAI)",
         (0, 0),
