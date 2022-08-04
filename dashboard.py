@@ -51,7 +51,7 @@ st.info(
 )
 st.write(
     """
-        Berdasarkan data dari BPS, pada tahun **2020**, penduduk usia **10-17** tahun yang menjadi pekerja di tanah air sebesar **1,17 juta** anak pada 2020,
+        Berdasarkan data dari BPS, pada tahun **2020**, penduduk usia **10-17** tahun yang menjadi pekerja di tanah air sebesar **1,17 juta** anak,
         naik **320 ribu** anak dibandingkan pada tahun sebelumnya **(⬆️38% dari 2019)**.
     """
 )
