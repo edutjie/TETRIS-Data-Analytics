@@ -169,7 +169,7 @@ st.write(
         Terdapat kenaikan pesat pada tahun **2020** dimana pandemi dimulai.
         Faktor penyebabnya bermacam-macam dan dalam kasus ini,
         diduga pandemi adalah penyebab terbesarnya.
-        Pada tahun **2021**, jumlah tersebut sedikit turun dari tahun sebelumnya, dari **1,7 juta** menjadi sebanyak **940 ribu** pekerja anak.
+        Pada tahun **2021**, jumlah tersebut sedikit turun dari tahun sebelumnya, dari **1,17 juta** menjadi sebanyak **940 ribu** pekerja anak.
         Masih sedikit lebih tinggi dari tahun-tahun sebelum pandemi. Bahkan jika kita lihat data di **Kalimantan Utara**, angkanya masih **naik** terus hingga **2021**.
     """
 )
