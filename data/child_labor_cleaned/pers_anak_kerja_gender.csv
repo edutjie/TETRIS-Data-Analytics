@@ -1,5 +1,13 @@
-tahun,Laki-laki,Perempuan,Laki-laki + Perempuan
-2018-01-01,2.97,2.24,2.61
-2019-01-01,2.73,1.96,2.35
-2020-01-01,3.34,3.16,3.25
-2021-01-01,2.67,2.6,2.63
+,gender,tahun,persentase
+0,Laki-laki,2018-12-31,2.97
+1,Perempuan,2018-12-31,2.24
+2,Laki-laki + Perempuan,2018-12-31,2.61
+3,Laki-laki,2019-12-31,2.73
+4,Perempuan,2019-12-31,1.96
+5,Laki-laki + Perempuan,2019-12-31,2.35
+6,Laki-laki,2020-12-31,3.34
+7,Perempuan,2020-12-31,3.16
+8,Laki-laki + Perempuan,2020-12-31,3.25
+9,Laki-laki,2021-12-31,2.67
+10,Perempuan,2021-12-31,2.6
+11,Laki-laki + Perempuan,2021-12-31,2.63

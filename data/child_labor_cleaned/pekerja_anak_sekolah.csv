@@ -1,3 +1,7 @@
-tahun,tidak/blm pernah sekolah,masih bersekolah,tidak bersekolah lagi
-2020,5.91,2.4,15.83
-2021,2.82,2.04,15.03
+,tahun,status,persentase
+0,2020,tidak/blm pernah sekolah,5.91
+1,2021,tidak/blm pernah sekolah,2.82
+2,2020,masih bersekolah,2.4
+3,2021,masih bersekolah,2.04
+4,2020,tidak bersekolah lagi,15.83
+5,2021,tidak bersekolah lagi,15.03
