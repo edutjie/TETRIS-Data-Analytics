@@ -1,0 +1,49 @@
+1.
+nama_pegawai: varchar(200)
+jumlah_so: bigint
+target: int
+kurang_dari_target: varchar(5)
+
+2. 
+no_do: varchar(200)
+kode_customer: varchar(200)
+tgl_do: date
+qty: double
+amount: double
+
+3.
+no_do: varchar(200)
+nama_customer: varchar(200)
+tgl_do: date
+date_measurement: date
+aging: int
+
+4.
+nama_product: varchar(200)
+qty: double
+
+5.
+vendor: varchar(100)
+amount: double
+
+6.
+node: int
+position: varchar(6)
+
+7.
+X: int
+Y: int
+
+8.
+tanggal: date
+qty: double
+harga_satuan: double
+total: double
+
+9.
+nama1: varchar(100)
+nama2: varchar(100)
+selisih: bigint
+
+10.
+jawaban: varchar(24)

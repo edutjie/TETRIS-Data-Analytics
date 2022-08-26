@@ -1,0 +1,1 @@
+select 'Norwegia,Jepang,Norwegia' as jawaban
