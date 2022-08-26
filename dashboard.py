@@ -403,3 +403,13 @@ with kekerasan_anak:
             "Korelasi:",
             f"{kekerasan_corr*100:.2f}%",
         )
+
+st.markdown("<h3>Solusi/Saran</h3>", unsafe_allow_html=True)
+"""
+- Provinsi Sulawesi merupakan provinsi dengan persentase pekerja anak tertinggi. Oleh karena itu, Sulawesi memerlukan perhatian khusus dari Pemerintah.
+- Perhatian khusus tersebut bisa dalam bentuk:
+	- Beasiswa kepada keluarga-keluarga kurang mampu.
+	- Sosialisasi
+		- Sekolah itu baik untuk jangka panjang.
+		- Mampu memperbaiki nasib keturunan.
+"""
